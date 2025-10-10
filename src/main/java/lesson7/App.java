@@ -44,22 +44,22 @@ public class App {
 
         for (int i = 0; i < length ; i++) {
             int num = arrayInt[i];
-
+// сума негативних
             if (num < 0) {
                 sumNegative +=num;
             }
-
+// пошук та підрахунок парних та не парних
             if (num % 2 == 0){
                 countEven ++;
             } else {
                     countOdd ++;
                 }
-
+// пошук мах
             if (num > max){
                 max = num;
                 maxIndex = i;
             }
-
+// пошук міт
             if (num < min){
                 min = num;
                 minIndex = i;
