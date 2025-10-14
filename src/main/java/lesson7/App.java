@@ -20,11 +20,21 @@ public class App {
         int length = scanner.nextInt();
         int[] arrayInt = new int[length];
 
-        String temp = "Введіть %d масиву: ";
+        String temp = "Введіть %d масиву %n(можуть бути цілі числа в діапазоні від -100 до 100.): ";
 
         for (int i = 0; i < length; i++) {
-            System.out.printf(temp, i+1);
-            arrayInt[i] = scanner.nextInt();
+            while (true) {
+                System.out.printf(temp, i + 1);
+                int value = scanner.nextInt();
+
+                // перевірка діапазону
+                if (value >= -100 && value <= 100) {
+                    arrayInt[i] = value;
+                    break; // вихід з циклу, якщо число валідне
+                } else {
+                    System.out.println("❌ Помилка: число має бути від -100 до 100. Спробуйте ще раз.");
+                }
+            }
         }
         System.out.println("Введений масив:");
 
@@ -35,7 +45,7 @@ public class App {
 
 
         //     int[] arrayInt = new int[]{34, -10, 56, -22, 78, 5, 7, -15, 42, -30, 91, 0, -50, 18, 99, -3, 25, 11, 63, -8};
-        //     int length = arrayInt.length;
+        //     int length = arrayInt.length;5
 
         int sumNegative = 0;
         int countEven = 0;
