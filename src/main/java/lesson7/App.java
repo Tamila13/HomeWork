@@ -1,19 +1,13 @@
 package main.java.lesson7;
 import java.util.Scanner;
-
+import java.util.Random;
 
 public class App {
 
-/*
-    Елементи масиву: [34, -10, 56, -22, 78, 5, 7, -15, 42, -30, 91, 0, -50, 18, 99, -3, 25, 11, 63, -8]
-    Сума від'ємних чисел: -138
-    Кількість парних чисел: 11
-    Кількість непарних чисел: 9
-    Найменший елемент: -50 (з індексом 12)
-    Найбільший елемент: 99 (з індексом 14)
-    Середнє арифметичне чисел після першого від'ємного числа: 20.39*/
     public static void main(String[] args) {
 
+// ввід даних з клавіатури
+/*
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Введіть довжину масиву: ");
@@ -36,6 +30,19 @@ public class App {
                 }
             }
         }
+*/
+
+// рандомна генерація чисел
+        int[] arrayInt = new int[20]; // довжина масиву 20
+        Random random = new Random();
+        int length = arrayInt.length;
+
+        // заповнення масиву випадковими числами від -100 до 100
+        for (int i = 0; i < arrayInt.length; i++) {
+            arrayInt[i] = random.nextInt(201) - 100; // 201, бо (0..200) → після зсуву стає (-100..100)
+        }
+
+
         System.out.println("Введений масив:");
 
         for (int num : arrayInt) {
